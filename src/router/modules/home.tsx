@@ -1,4 +1,4 @@
-import Layout from '@/layout'
+import Layout from '@/layout/default'
 import type { RouteObject } from 'react-router-dom'
 import Home from '@/pages/Welcome';
 
