@@ -1,19 +1,19 @@
-import React from 'react';
-import { Layout, theme } from 'antd';
+import React from 'react'
+import { Layout, theme } from 'antd'
 import { Outlet } from 'react-router-dom'
 import './index.less'
-import { useSelector } from '@/redux';
 import DefaultMenu from './menu'
-import DefaultHeader from "./header";
+import DefaultHeader from './header'
+import { useSelector } from '@/redux'
 
-const { Header, Sider, Content } = Layout;
+const { Header, Sider, Content } = Layout
 
 const App: React.FC = () => {
-  const { isCollapse } = useSelector((state) => state.menu);
+  const { isCollapse } = useSelector(state => state.menu)
 
   const {
     token: { colorBgContainer, borderRadiusLG },
-  } = theme.useToken();
+  } = theme.useToken()
 
   return (
     <Layout className="layout-container">
@@ -38,7 +38,7 @@ const App: React.FC = () => {
         </Content>
       </Layout>
     </Layout>
-  );
-};
+  )
+}
 
-export default App;
+export default App
