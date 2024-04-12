@@ -1,6 +1,6 @@
-import Layout from '@/layout/default'
 import type { RouteObject } from 'react-router-dom'
-import Home from '@/pages/Welcome';
+import Layout from '@/layout/default'
+import Home from '@/pages/Welcome'
 
 // 首页模块
 const homeRouter: RouteObject[] = [
@@ -9,10 +9,10 @@ const homeRouter: RouteObject[] = [
     children: [
       {
         path: '/welcome',
-        element: <Home />
+        element: <Home />,
       },
     ],
   },
-];
+]
 
-export default homeRouter;
+export default homeRouter

@@ -1,46 +1,47 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { MenuList } from './menu';
+import type { PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
+import type { MenuList } from './menu'
 
 export interface CurrentUser {
   username?: string
 }
 
 export interface GlobalState {
-  user: CurrentUser;
-  authRouter: string[];
-  menuData: MenuList[];
-  menuLoading: boolean;
+  user: CurrentUser
+  authRouter: string[]
+  menuData: MenuList[]
+  menuLoading: boolean
 }
 
 const globalState: GlobalState = {
   user: {
-    username: 'iihll'
+    username: 'iihll',
   },
   authRouter: [],
   menuData: [],
   menuLoading: true,
-};
+}
 
 const globalSlice = createSlice({
   name: 'menu',
   initialState: globalState,
   reducers: {
     updateUser(state: GlobalState, { payload }: PayloadAction<CurrentUser>) {
-      state.user = payload;
+      state.user = payload
     },
 
     setAuthRouter(state: GlobalState, { payload }: PayloadAction<string[]>) {
-      window.localStorage.setItem('authRouter', payload.join(','));
-      state.authRouter = payload;
+      window.localStorage.setItem('authRouter', payload.join(','))
+      state.authRouter = payload
     },
     setMenuData(state: GlobalState, { payload }: PayloadAction<MenuList[]>) {
-      state.menuData = payload;
+      state.menuData = payload
     },
     setMenuLoading(state: GlobalState, { payload }: PayloadAction<boolean>) {
-      state.menuLoading = payload;
+      state.menuLoading = payload
     },
   },
-});
+})
 
-export default globalSlice.reducer;
-export const { updateUser, setAuthRouter, setMenuData, setMenuLoading } = globalSlice.actions;
+export default globalSlice.reducer
+export const { updateUser, setAuthRouter, setMenuData, setMenuLoading } = globalSlice.actions
