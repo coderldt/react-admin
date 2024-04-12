@@ -2,6 +2,7 @@ import { Avatar, Card, List } from 'antd'
 import React from 'react'
 import { useSelector } from '@/redux'
 import welcomeImg from '@/assets/images/welcome.png'
+import SettingDrawer from "@/pages/Welcome/SettingDrawer.tsx";
 import './index.less'
 
 const des = [
@@ -44,6 +45,7 @@ const Welcome: React.FC = () => {
   return (
     <>
       <Card style={{ height: '100%' }} classNames={{ body: '' }}>
+        <SettingDrawer />
         <List
           itemLayout="horizontal"
           dataSource={[{ title: user.username }]}
