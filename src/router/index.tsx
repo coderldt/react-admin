@@ -1,13 +1,13 @@
-import { useRoutes, Navigate } from 'react-router-dom'
+import { Navigate, useRoutes } from 'react-router-dom'
 import homeRoutes from './modules/home'
 
-const Router = () => {
+function Router() {
   const routes = useRoutes([
     {
       path: '/',
       element: <Navigate to="/welcome" />,
     },
-    ...homeRoutes
+    ...homeRoutes,
   ])
 
   return routes
